@@ -69,40 +69,39 @@
 
    <!-- Category -->
    <div>
-      <div class="whyschose">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-7 offset-md-3">
-                  <div class="title">
-                     <h2><strong class="black">Categories</strong></h2>
+    <div class="product">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                <div class="title">
+                   <h2><strong class="black">Categories</strong></h2>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="product-bg">
+       <div class="product-bg-white">
+          <div class="container">
+             <div class="row">
+                  @foreach ($categories as $category)
+                      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <a href="{{ route('productSort',['id'=>$category->categoryId]) }}">
+                              <div class="product-box" style="border-radius:25px;">
+                                  <i><img src="{{ asset('/categoryImage/'.$category->imagePath) }}" style="height: 130px;width:130px;object-fit:contain;"/></i>
+                                  <h3>{{  $category->name }}</h3>
+                              </div>
+                          </a>
+                      </div>
+                  @endforeach
+                  <div class="col-md-12">
+                      <a href="{{ route('categories') }}"><button class="read-more"> All Categories</button></a>
                   </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="choose_bg">
-         <div class="container">
-            <div class="white_bg">
-               <div class="row">
-                    @foreach($categories as $category)
-                        <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                            <a href="{{ route('productSort',['id'=>$category->categoryId]) }}">
-                                <div class="for_box">
-                                    <i><img src="{{ asset('/categoryImage/'.$category->imagePath) }}" style="height: 100px;width:150px;object-fit:contain;"/></i>
-                                    <h3>{{  $category->name }}</h3>
-                                </div>
-                            </a>
-                        </dir>
-                    @endforeach
-                    <div class="col-md-12">
-                        <a href="{{ route('categories') }}"><button class="read-more"> All Categories</button></a>
-                        {{-- <input type="button" value="All Category" class="read-more"> --}}
-                    </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
 
    <!-- Products -->
    <div>

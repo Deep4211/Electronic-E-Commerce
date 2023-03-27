@@ -42,7 +42,7 @@ class homeController extends Controller
     //Index
     public function index()
     {
-        $categories = DB::table('categories')->limit(4)->get();
+        $categories = DB::table('categories')->limit(8)->get();
         $products = DB::table('products')->limit(8)->get();
         return view('index',compact('categories'),compact('products'));
     }
@@ -122,6 +122,14 @@ class homeController extends Controller
     public function loginPage()
     {
         return view('login');
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        Alert::success('Logout Successfull');
+        return redirect()->route('loginPage');
     }
 
     //Check Login
