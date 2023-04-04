@@ -99,6 +99,7 @@
                               <li class="@yield('products')"><a href="{{ route('products') }}">Products</a></li>
                               <li class="@yield('categories')"><a href="{{ route('categories') }}">Categories</a></li>
                               <li class="@yield('contact')"><a href="{{ route('contact') }}">Contact Us</a></li>
+                              <li class="@yield('cart')"><a href="{{ route('cart') }}">Proceed to Cart</a></li>
                               @yield('register')
                            </ul>
                         </nav>
@@ -153,7 +154,7 @@
         <div class="copyright">
             <p>Copyright 2023, All Right Reserved By <a href="{{ route('index') }}">LIGHTEN ONLINE SHOP</a></p>
         </div>
-    </footr>
+    </footer>
 
  <!-- Javascript Files-->
  <script src="{{ asset('js/jquery.min.js') }}"></script>

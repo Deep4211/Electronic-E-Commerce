@@ -56,12 +56,12 @@
 						</a>
 					</div>
 
-                    <div class="text-center p-t-12">
+                    {{-- <div class="text-center p-t-12">
 						<a class="txt2" href="{{ route('loginPageAdmin') }}">
 							Admin Login
                             <i class="fa fa-user m-l-5" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> --}}~
 
 					<div class="text-center p-t-80">
 						<a class="txt2" href="{{route('registerPage')}}">

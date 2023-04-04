@@ -78,10 +78,10 @@ class homeController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'phone'=>'required',
+            'phone'=>'required | min:10',
             'email'=>'required | unique:users',
             'address'=>'required',
-            'password'=>'required | confirmed'
+            'password'=>'required | min: 8' 
         ]);
 
         $user = new userModel();

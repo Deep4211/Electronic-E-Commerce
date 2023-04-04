@@ -19,6 +19,7 @@
     rel="stylesheet"/>
 </head>
 <body style="background-image: url('images/registerbg.jpg') ;background-color: #cccccc;">
+  @include('layout.message')
     <section class="vh-100">
         <div class="container h-100" >
           <div class="row d-flex justify-content-center align-items-center h-100" >
@@ -97,6 +98,15 @@
                                 <label class="form-label text-white m-1" for="customFile2">Choose Photo</label>
                                 <input type="file" class="form-control d-none" id="customFile2" onchange="loadPhoto(event)" name="photourl"/>
                             </div>
+                        </div>
+                        <div>
+                          &nbsp;
+                        </div>
+                        <div class="text-center p-t-12">
+                          <a class="txt2" href="{{ route('loginPage') }}">
+                            Already a Customer ? 
+                              <i class="fa fa-user m-l-5" aria-hidden="true"></i>
+                          </a>
                         </div>
 
                       </div>
