@@ -184,7 +184,10 @@ class homeController extends Controller
         }
     }
 
-   
+   public function contact()
+   {
+    return view('contact');
+   }
 
     //Contact Us Data Save
     public function contactAttempt(Request $request)

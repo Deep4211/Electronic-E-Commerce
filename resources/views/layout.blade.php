@@ -85,7 +85,7 @@
                   <div class="full">
                      <div class="center-desk">
                         <div class="logo">
-                           <a href="{{ route('index') }}"><img src="{{ asset('images/logo.jpg') }}" alt="logo"/></a>
+                           <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="logo"/></a>
                         </div>
                      </div>
                   </div>
@@ -152,7 +152,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright 2023, All Right Reserved By <a href="{{ route('index') }}">LIGHTEN ONLINE SHOP</a></p>
+            <p>Copyright 2023, All Right Reserved By <a href="{{ route('index') }}">DNM Electronics</a></p>
         </div>
     </footer>
 
