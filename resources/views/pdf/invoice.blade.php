@@ -5,7 +5,7 @@
     <center>
         <h1>Invoice</h1>
     </center>
-    <h3>Sold By: Lighten Online Shop</h3>
+    <h3>Sold By: DNM ELECTRONICS</h3>
     <br>
     <hr>
     <br>
@@ -13,6 +13,7 @@
     <h4>Order Date : {{ $detail->orderDate }}</h4>
     <h4>Customer Name : {{ DB::table('users')->where('id',$detail->userId)->value('name'); }}</h4>
     <h4>Contact Number : {{ DB::table('users')->where('id',$detail->userId)->value('phone'); }}</h4>
+    <h4>Amount: {{DB::table('users')->where('id',$detail->userId)->value('amount'); }}</h4>
     <h4>Address : </h4>
     <div style="height:100px;width:200px;fit-content:fill;">
         {{ $detail->address }}
