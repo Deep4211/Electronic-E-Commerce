@@ -16,7 +16,9 @@ class orderModel extends Model
         'orderDate',
         'address',
         'amount',
-        'status'
+        'status',
+        'paymode',
+        'tnxId'
     ];
 
     public function products(){

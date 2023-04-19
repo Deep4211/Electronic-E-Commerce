@@ -12,6 +12,7 @@ use App\Models\productModel;
 use App\Models\wishlistModel;
 use App\Models\cartModel;
 use App\Models\orderModel;
+use App\Models\cardModel;
 
 
 //Functionalies
@@ -81,7 +82,7 @@ class homeController extends Controller
             'phone'=>'required | min:10',
             'email'=>'required | unique:users',
             'address'=>'required',
-            'password'=>'required | min: 8' 
+            'password'=>'required | min: 8'
         ]);
 
         $user = new userModel();
@@ -384,10 +385,8 @@ class homeController extends Controller
     //Buy Now
     public function buynow($amount)
     {
-        
         // Alert::success("Order Placed Successfully");
         return redirect()->route('payment',['amount'=>$amount]);
-        
     }
 
     //Payment
@@ -399,7 +398,7 @@ class homeController extends Controller
     public function placeorder(Request $request)
     {
         $products = cartModel::where('userId',Auth::user()->id)->get();
-        if($request->addr == def)
+        if($request->addr == "def")
         {
             $address = userModel::where('id',Auth::user()->id)->pluck('address')/* ->get() */;
         }
@@ -407,7 +406,7 @@ class homeController extends Controller
         {
             $address = $request->newaddr;
         }
-        
+
         foreach ($products as $item) {
             $current_date = date('Y-m-d H:i:s');
             $order = new orderModel();
@@ -417,11 +416,34 @@ class homeController extends Controller
             $order->address =   $address;
             $order->amount = $item->product->price;
             $order->status = "Pending";
+            if($request->paymode == "card")
+            {
+                $order->paymode = "card";
+                $card = new cardModel();
+                $card->name = $request->name;
+                $card->cardnumber = $request->cardnumber;
+                $card->expirydate = $request->expirydate;
+                $card->cvv = $request->cvv;
+                $card->save();
+                $lastTnx = cardModel::latest()->first();
+                $tnxId = $lastTnx->tnxId;
+                /* $tnx = DB::table('cardinfo')->latest()->first()->select('tnxId');
+                foreach($tnx as $trans)
+                {
+                    echo $trans->tnxId;
+                    $order->tnxId = $trans->tnxId;
+                } */
+                $order->tnxId = $tnxId;
+            }
+            else
+            {
+                $order->paymode = "cod";
+            }
             $order->save();
         }
         DB::table('cart')->where('userId',Auth::user()->id)->delete();
 
-        return view('account');
+        return redirect()->route('account');
     }
 
     //Orders

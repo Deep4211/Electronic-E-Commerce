@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('address');
             $table->bigInteger('amount');
             $table->string('status');
+            $table->string('paymode');
+            $table->bigInteger('tnxId')->unsigned()->nullable();
+            $table->foreign('tnxId')->references('tnxId')->on('cardinfo')->onDelete('cascade');
             $table->timestamps();
         });
     }

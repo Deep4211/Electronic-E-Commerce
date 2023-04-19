@@ -26,7 +26,8 @@
  </div>
 
  <br>
- <form onsubmit="{{route('placeorder')}}" type="post">
+ <form method="post" action="{{ route('placeorder') }}">
+    @csrf
  <div class="container p-0">
     <div class="card px-4">
         <p class="h8 py-3">Address Options</p>
@@ -47,7 +48,7 @@
                                             <textarea class="form-control mb-3" placeholder="Address" name="newaddr"></textarea>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -67,7 +68,7 @@
             <div class="col-12">
                 <div class="d-flex flex-column">
                     <fieldset>
-                    
+
                         <label for="cod"> Cash On Delivery <input type="radio" id="cod" value="cod" onchange="hidecard()" name="paymode" ></label>
                             <br>
                         <label for="card"> Card <input type="radio" id="card" value="card" name="paymode" onchange="showcard()" ></label>
@@ -87,31 +88,31 @@
                     <div class="col-12">
                         <div class="d-flex flex-column">
                             <p class="text mb-1">Name</p>
-                            <input class="form-control mb-3" type="text" placeholder="Name">
+                            <input class="form-control mb-3" name="name" type="text" placeholder="Name">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="d-flex flex-column">
                             <p class="text mb-1">Card Number</p>
-                            <input class="form-control mb-3" type="text" placeholder="1234 5678 4356 6635">
+                            <input class="form-control mb-3" name="cardnumber" type="text" placeholder="1234 5678 4356 6635">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex flex-column">
                             <p class="text mb-1">Expiry</p>
-                            <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                            <input class="form-control mb-3" name="expirydate" type="text" placeholder="MM/YYYY">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex flex-column">
                             <p class="text mb-1">CVV</p>
-                            <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                            <input class="form-control mb-3 pt-2 " name="cvv" type="password" placeholder="***">
                         </div>
                     </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 
 <div id="placeorder" class="placeorder">
@@ -129,7 +130,7 @@ function hidecard()
 {
     var div = document.getElementById('cardpay');
     div.style.visibility = 'hidden';
-    
+
 }
 function showaddr()
 {
@@ -141,5 +142,5 @@ function hideaddr()
     var div = document.getElementById('addre');
     div.style.visibility = 'hidden';
 }
-</script> 
+</script>
     @endsection
