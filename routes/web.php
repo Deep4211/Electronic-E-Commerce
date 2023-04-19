@@ -144,6 +144,9 @@ Route::middleware('auth')->group(function()
     //Payment
     Route::get('/payment/{amount}',[homeController::class,'payment'])->name('payment');
 
+    //PLace Order
+    Route::post('/placeorder',[homeController::class,'placeorder'])->name('placeorder');
+
     //Logout
     Route::get('/logout',[homeController::class,'logout'])->name('logout');
 

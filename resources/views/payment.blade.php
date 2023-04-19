@@ -26,6 +26,39 @@
  </div>
 
  <br>
+ <form onsubmit="{{route('placeorder')}}" type="post">
+ <div class="container p-0">
+    <div class="card px-4">
+        <p class="h8 py-3">Address Options</p>
+        <div class="row gx-3">
+            <div class="col-12">
+                <div class="d-flex flex-column">
+                    <fieldset>
+                        <label for="def"> Default Address <input type="radio" id="def" value="def" onchange="hideaddr()" name="addr" ></label>
+                            <br>
+                        <label for="nw"> New Address <input type="radio" id="def" value="nw" name="addr" onchange="showaddr()" ></label>
+                    </fieldset>
+                    <div class="addre"  id="addre" style="visibility:hidden">
+                        <div class="container p-0">
+                            <div class="card px-4">
+                                <div class="row gx-3">
+                                    <div class="col-12">
+                                        <div class="d-flex flex-column">
+                                            <textarea class="form-control mb-3" placeholder="Address" name="newaddr"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <br>
 
  <div class="container p-0">
     <div class="card px-4">
@@ -46,7 +79,7 @@
  </div>
 
 <div id="cardpay" class="cardpay" style="visibility:hidden">
-<form>
+
         <div class="container p-0">
             <div class="card px-4">
                 <p class="h8 py-3">Payment Details</p>
@@ -75,12 +108,6 @@
                             <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
                         </div>
                     </div>
-                    {{-- <div class="col-12">
-                        <div class="btn btn-primary mb-3">
-                            <span class="ps-3">Pay </span>
-                        
-                        </div>
-                    </div>    --}} 
             </div>
         </div>
     </div>
@@ -103,6 +130,16 @@ function hidecard()
     var div = document.getElementById('cardpay');
     div.style.visibility = 'hidden';
     
+}
+function showaddr()
+{
+    var div = document.getElementById('addre');
+    div.style.visibility = 'visible';
+}
+function hideaddr()
+{
+    var div = document.getElementById('addre');
+    div.style.visibility = 'hidden';
 }
 </script> 
     @endsection

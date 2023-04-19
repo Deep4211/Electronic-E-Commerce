@@ -384,8 +384,30 @@ class homeController extends Controller
     //Buy Now
     public function buynow($amount)
     {
+        
+        // Alert::success("Order Placed Successfully");
+        return redirect()->route('payment',['amount'=>$amount]);
+        
+    }
+
+    //Payment
+    public function payment($amount)
+    {
+        return view('payment',compact('amount'));
+    }
+
+    public function placeorder(Request $request)
+    {
         $products = cartModel::where('userId',Auth::user()->id)->get();
-        $address = userModel::where('id',Auth::user()->id)->pluck('address')/* ->get() */;
+        if($request->addr == def)
+        {
+            $address = userModel::where('id',Auth::user()->id)->pluck('address')/* ->get() */;
+        }
+        else
+        {
+            $address = $request->newaddr;
+        }
+        
         foreach ($products as $item) {
             $current_date = date('Y-m-d H:i:s');
             $order = new orderModel();
@@ -398,15 +420,8 @@ class homeController extends Controller
             $order->save();
         }
         DB::table('cart')->where('userId',Auth::user()->id)->delete();
-        // Alert::success("Order Placed Successfully");
-        return redirect()->route('payment',['amount'=>$amount]);
-        
-    }
 
-    //Payment
-    public function payment($amount)
-    {
-        return view('payment',compact('amount'));
+        return view('account');
     }
 
     //Orders
