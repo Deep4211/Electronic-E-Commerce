@@ -127,7 +127,7 @@ Route::middleware('auth')->group(function()
     Route::get('/clearcart',[homeController::class,'clearcart'])->name('clearcart');
 
     //Buy Now
-    Route::get('/buynow',[homeController::class,'buynow'])->name('buynow');
+    Route::get('/buynow/{amount}',[homeController::class,'buynow'])->name('buynow');
 
     //Orders
     Route::get('/orders',[homeController::class,'orders'])->name('orders');
@@ -140,6 +140,9 @@ Route::middleware('auth')->group(function()
 
     //Download PDF Page
     Route::get('/downloadPdf/{id}',[homeController::class,'downloadPdf'])->name('downloadPdf');
+
+    //Payment
+    Route::get('/payment/{amount}',[homeController::class,'payment'])->name('payment');
 
     //Logout
     Route::get('/logout',[homeController::class,'logout'])->name('logout');

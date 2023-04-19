@@ -58,7 +58,7 @@
     </div>
     <br>
     <center>
-        <a href="{{ route('buynow') }}"><button class="buy" style="font-size: 20px;margin:20px;" onclick="return confirm('Do You Want To Buy All Products From Cart?');">Buy Now</button></a>
+        <a href="{{ route('buynow',['amount'=>$total]) }}"><button class="buy" style="font-size: 20px;margin:20px;" onclick="return confirm('Do You Want To Buy All Products From Cart?');">Buy Now</button></a>
         &nbsp;&nbsp;
         <a href="{{ route('clearcart') }}"><button class="buy" style="font-size:20px;background-color:orangered;" onclick="return confirm('Do You Want To Clear The Cart ?');">Clear All</button></a>
         <br>
