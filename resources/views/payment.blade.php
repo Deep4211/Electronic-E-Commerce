@@ -35,9 +35,9 @@
             <div class="col-12">
                 <div class="d-flex flex-column">
                     <fieldset>
-                        <label for="def"> Default Address <input type="radio" id="def" value="def" onchange="hideaddr()" name="addr" ></label>
+                        <input type="radio" id="def" value="def" onchange="hideaddr()" name="addr" ><label for="def"><h3><b>Default Address</b></h3> </label>
                             <br>
-                        <label for="nw"> New Address <input type="radio" id="def" value="nw" name="addr" onchange="showaddr()" ></label>
+                            <input type="radio" id="def" value="nw" name="addr" onchange="showaddr()" ><label for="nw"><h3><b>New Address</b></h3></label>
                     </fieldset>
                     <div class="addre"  id="addre" style="visibility:hidden">
                         <div class="container p-0">
@@ -69,9 +69,9 @@
                 <div class="d-flex flex-column">
                     <fieldset>
 
-                        <label for="cod"> Cash On Delivery <input type="radio" id="cod" value="cod" onchange="hidecard()" name="paymode" ></label>
+                        <input type="radio" id="cod" value="cod" onchange="hidecard()" name="paymode" ><label for="cod"> <h3><b>Cash On Delivery</b></h3></label>
                             <br>
-                        <label for="card"> Card <input type="radio" id="card" value="card" name="paymode" onchange="showcard()" ></label>
+                            <input type="radio" id="card" value="card" name="paymode" onchange="showcard()" ><label for="card"> <h3><b>Card</b></h3> </label>
                     </fieldset>
                 </div>
             </div>

@@ -85,22 +85,28 @@
                   <div class="full">
                      <div class="center-desk">
                         <div class="logo">
+                           {{-- <div style="position:absolute; top:50px; right:250px;"> --}}
                            <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="logo"/></a>
+                           {{-- </div> --}}
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> 
                <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
                   <div class="menu-area">
                      <div class="limit-box">
                         <nav class="main-menu">
-                           <ul class="menu-area-main">
+                           <ul class="menu-area-main">   
+                              {{-- <div style="position:absolute; right:50px;"> --}}
                               <li class="@yield('home')"><a href="{{ route('index') }}">Home</a></li>
                               <li class="@yield('products')"><a href="{{ route('products') }}">Products</a></li>
                               <li class="@yield('categories')"><a href="{{ route('categories') }}">Categories</a></li>
                               <li class="@yield('contact')"><a href="{{ route('contact') }}">Contact Us</a></li>
                               <li class="@yield('cart')"><a href="{{ route('cart') }}">Proceed to Cart</a></li>
+                              <li class="@yield('cart')"><a href="{{ route('wishlist') }}">Wishlist</a></li>
+
                               @yield('register')
+                              {{-- </div> --}}
                            </ul>
                         </nav>
                      </div>

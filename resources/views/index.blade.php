@@ -15,57 +15,57 @@
 @section('content')
    <!-- Slider -->
    <section class="slider_section">
-        <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
+    <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="first-slide" src="{{ asset('images/banner1.jpg') }}" alt="First Slide">
-                    <div class="container">
-                        <div class="carousel-caption relative">
-                            <h1>Latest<br> <strong class="black_bold">Tech</strong><br>
-                                <strong class="yellow_bold">Gadgets</strong></h1>
-                            <a href="{{ route('products') }}">See More Products</a>
-                        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="first-slide" src="{{ asset('images/banner1.jpg') }}" alt="First Slide">
+                <div class="container">
+                    <div class="carousel-caption relative">
+                        <h1>Latest<br> <strong class="black_bold">Tech</strong><br>
+                            <strong class="yellow_bold">Gadgets</strong></h1>
+                        <a href="{{ route('products') }}">See More Products</a>
                     </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img class="second-slide" src="{{ asset('images/banner2.jpg') }}" alt="Second Slide" style="height: 590px; width: 1730px;">
-                </div>
-
-                {{-- <div class="carousel-item">
-                    <img class="third-slide" src="{{ asset('images/banner3.jpg') }}" alt="Third slide" style="height: 590px; width: 1730px;">
-                </div> --}}
-
-                <div class="carousel-item">
-                    <img class="third-slide" src="{{ asset('images/banner4.jpg') }}" alt="Third Slide" style="height: 590px; width: 1730px;">
-                </div>
-
-                <div class="carousel-item">
-                    <img class="third-slide" src="{{ asset('images/banner5.webp') }}" alt="Fourth Slide" style="height: 590px; width: 1730px;">
-                </div>
-
-                {{-- <div class="carousel-item">
-                    <img class="third-slide" src="{{ asset('images/banner6.jpg') }}" alt="Sixth slide" style="height: 590px; width: 1730px;">
-                </div> --}}
-
-                <div class="carousel-item">
-                    <img class="second-slide" src="{{ asset('images/banner7.jpg') }}" alt="Fifth Slide" style="height: 590px; width: 1730px;">
-                </div>
-
-                <div class="carousel-item">
-                    <img class="third-slide" src="{{ asset('images/banner8.jpg') }}" alt="Sixth Slide" style="height: 590px; width: 1730px;">
                 </div>
             </div>
 
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="next">
-                <i class='fa fa-angle-right'></i>
-            </a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
-                <i class='fa fa-angle-left'></i>
-            </a>
+            <div class="carousel-item">
+                <img class="second-slide" src="{{ asset('images/banner2.jpg') }}" alt="Second Slide" style="height: 590px; width: 1730px;">
+            </div>
+
+            {{-- <div class="carousel-item">
+                <img class="third-slide" src="{{ asset('images/banner3.jpg') }}" alt="Third slide" style="height: 590px; width: 1730px;">
+            </div> --}}
+
+            <div class="carousel-item">
+                <img class="third-slide" src="{{ asset('images/banner4.jpg') }}" alt="Third Slide" style="height: 590px; width: 1730px;">
+            </div>
+
+            <div class="carousel-item">
+                <img class="third-slide" src="{{ asset('images/banner5.webp') }}" alt="Fourth Slide" style="height: 590px; width: 1730px;">
+            </div>
+
+            {{-- <div class="carousel-item">
+                <img class="third-slide" src="{{ asset('images/banner6.jpg') }}" alt="Sixth slide" style="height: 590px; width: 1730px;">
+            </div> --}}
+
+            <div class="carousel-item">
+                <img class="second-slide" src="{{ asset('images/banner7.jpg') }}" alt="Fifth Slide" style="height: 590px; width: 1730px;">
+            </div>
+
+            <div class="carousel-item">
+                <img class="third-slide" src="{{ asset('images/banner8.jpg') }}" alt="Sixth Slide" style="height: 590px; width: 1730px;">
+            </div>
         </div>
-   </section>
+
+        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="next">
+            <i class='fa fa-angle-right'></i>
+        </a>
+        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
+            <i class='fa fa-angle-left'></i>
+        </a>
+    </div>
+</section>
 
    <!-- Category -->
    <div>
